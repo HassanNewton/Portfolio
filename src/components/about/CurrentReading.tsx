@@ -18,7 +18,7 @@ export default function CurrentReading() {
         </div>
         <div className="aspect-[3/2] rounded-xl overflow-hidden bg-background-light">
           <img
-            src="/images/book1.jpg"
+            src={`${process.env.PUBLIC_URL}/images/book1.jpg`}
             alt="The Alignment Problem"
             className="mx-auto h-auto max-h-[160px] object-contain rounded-xl"
           />

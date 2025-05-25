@@ -78,9 +78,10 @@ export default function Hero() {
   };
 
   const getProfileImage = () => {
-    if (isLiking) return "/images/Person_like.svg";
-    if (isHovering) return "/images/Person_winking.svg";
-    return "/images/Person_Happy.svg";
+    if (isLiking) return `${process.env.PUBLIC_URL}/images/Person_like.svg`;
+    if (isHovering)
+      return `${process.env.PUBLIC_URL}/images/Person_winking.svg`;
+    return `${process.env.PUBLIC_URL}/images/Person_Happy.svg`;
   };
 
   return (

@@ -243,7 +243,7 @@ export default function About() {
                     }}
                   >
                     <img
-                      src={`/images/StoryOfMe/image${i}.jpg`}
+                      src={`${process.env.PUBLIC_URL}/images/StoryOfMe/image${i}.jpg`}
                       alt={`About me ${i}`}
                       className="w-full h-full object-cover"
                     />

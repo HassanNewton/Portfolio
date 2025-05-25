@@ -40,7 +40,7 @@ export default function Footer() {
               animations.map((anim, index) => (
                 <motion.img
                   key={index}
-                  src="/images/Person_fisting.svg"
+                  src={`${process.env.PUBLIC_URL}/images/Person_fisting.svg`}
                   alt="Fist bump"
                   className="w-24 h-24 absolute"
                   style={{
@@ -103,7 +103,7 @@ export default function Footer() {
               className="w-10 h-10 rounded-full bg-white/60 hover:bg-white flex items-center justify-center transition-colors"
             >
               <img
-                src={`/images/icons/${social.name}.svg`}
+                src={`${process.env.PUBLIC_URL}/images/icons/${social.name}.svg`}
                 alt={social.name}
                 className="w-5 h-5"
               />

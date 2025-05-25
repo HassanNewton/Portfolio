@@ -5,7 +5,7 @@ export default function LocationMap() {
     <div className="bg-background-light rounded-2xl overflow-hidden relative">
       <div className="w-full h-[200px] relative">
         <img
-          src="/images/map.png"
+          src={`${process.env.PUBLIC_URL}/images/map.png`}
           alt="Malmö map"
           className="w-full h-full object-cover"
         />
@@ -14,7 +14,7 @@ export default function LocationMap() {
           style={{ width: "115px", height: "115px" }}
         >
           <img
-            src="/images/Avatar.svg"
+            src={`${process.env.PUBLIC_URL}/images/Avatar.svg`}
             alt="Location marker"
             className="w-full h-full object-contain"
           />

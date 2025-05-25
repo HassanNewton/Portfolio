@@ -11,7 +11,7 @@ const caseStudies = [
       "Features include real-time forecasting",
       "Interactive charts, and an accessible API.",
     ],
-    image: "/images/StockPredictor.png",
+    image: `${process.env.PUBLIC_URL}/images/StockPredictor.png`,
     repoUrl: "https://github.com/HassanNewton/StockPredictor",
   },
   {
@@ -24,7 +24,7 @@ const caseStudies = [
       "Uses YOLO for object detection and Tesseract for text extraction",
       "Includes color analysis and a user-friendly web interface for interaction",
     ],
-    image: "/images/OCR_img.jpg",
+    image: `${process.env.PUBLIC_URL}/images/OCR_img.jpg`,
     repoUrl: "https://github.com/Hassonki/BilCleaniken",
   },
   {
@@ -37,7 +37,7 @@ const caseStudies = [
       "Improved processing accuracy through NER and table parsing",
       "Structured JSON output ready for database integration",
     ],
-    image: "/images/Hulo.png",
+    image: `${process.env.PUBLIC_URL}/images/Hulo.png`,
     repoUrl: "https://github.com/Detoriun/Hulo",
   },
 ];

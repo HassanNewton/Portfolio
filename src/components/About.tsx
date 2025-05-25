@@ -202,46 +202,54 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="text-xl text-white/70 max-w-3xl mx-auto"
             >
-              I'm passionate about creating user-friendly digital experiences
-              that make a difference in people's lives.
+              I'm an IT educator consultant passionate about creating
+              user-friendly digital experiences that make a difference in
+              people's lives — and I love to travel and explore new perspectives
+              along the way.
             </motion.p>
           </div>
 
           {/* Image Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[1, 2, 3].map((i) => (
-              <motion.div
-                key={i}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="aspect-[4/3] rounded-2xl overflow-hidden bg-background-light/50"
-              >
-                <img
-                  src={`/images/about-${i}.jpg`}
-                  alt={`About me ${i}`}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
-          </div>
+          <div className="relative h-[500px] flex items-center justify-center mb-16 overflow-hidden">
+            <div className="flex items-end justify-center">
+              {[1, 2, 3, 4, 5].map((i, idx) => {
+                // Rotation och z-index
+                const rotationMap = [-10, -5, 0, 5, 10];
+                const zIndexMap = [1, 2, 3, 2, 1];
+                const marginMap = [
+                  "ml-0",
+                  "-ml-12",
+                  "-ml-12",
+                  "-ml-12",
+                  "-ml-12",
+                ]; // "fusket"
 
-          {/* Skills */}
-          <div className="overflow-x-auto pb-4 mb-16">
-            <div className="flex gap-3 min-w-max px-4">
-              {skills.map((skill, i) => (
-                <motion.div
-                  key={skill}
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium"
-                >
-                  {skill}
-                </motion.div>
-              ))}
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ y: 20, opacity: 0, rotate: rotationMap[idx] }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0 }}
+                    className={` transform w-[200px] md:w-[220px] aspect-[3/4] rounded-xl overflow-hidden bg-background-light/50 shadow-xl cursor-pointer transition-transform duration-300 ${marginMap[idx]}`}
+                    style={{
+                      transform: `rotate(${rotationMap[idx]}deg)`,
+                      zIndex: zIndexMap[idx],
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      rotate: 0,
+                      zIndex: 10,
+                    }}
+                  >
+                    <img
+                      src={`/images/StoryOfMe/image${i}.jpg`}
+                      alt={`About me ${i}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -259,13 +267,13 @@ export default function About() {
             Let's know more about me
           </motion.h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="lg:col-span-2 space-y-4">
               <TechStackCarousel />
               <CurrentReading />
             </div>
 
-            <div className="lg:col-span-1 space-y-8">
+            <div className="lg:col-span-1 space-y-4">
               <LocationMap />
               <MyPersona />
             </div>
@@ -327,8 +335,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 }

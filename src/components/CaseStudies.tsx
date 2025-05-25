@@ -12,6 +12,7 @@ const caseStudies = [
       "Interactive charts, and an accessible API.",
     ],
     image: "/images/StockPredictor.png",
+    repoUrl: "https://github.com/HassanNewton/StockPredictor",
   },
   {
     title: "BilCleaniken",
@@ -24,18 +25,20 @@ const caseStudies = [
       "Includes color analysis and a user-friendly web interface for interaction",
     ],
     image: "/images/OCR_img.jpg",
+    repoUrl: "https://github.com/Hassonki/BilCleaniken",
   },
   {
-    title: "Terrific",
-    subtitle: "Find your perfect home tutor",
-    company: "DELOITTE",
-    year: "2023",
+    title: "Thesis Work",
+    subtitle: "Intelligent invoice processing system using CV and NLP",
+    company: "Hulo",
+    year: "2024",
     metrics: [
-      "Onboarding increased to 12%",
-      "New users signups increased by 32%",
-      "Engagement increased by 20%",
+      "Automated invoice data extraction with YOLOv8 and Tesseract OCR",
+      "Improved processing accuracy through NER and table parsing",
+      "Structured JSON output ready for database integration",
     ],
-    image: "/images/terrific-app.png",
+    image: "/images/Hulo.png",
+    repoUrl: "https://github.com/Detoriun/Hulo",
   },
 ];
 
@@ -117,11 +120,13 @@ export default function CaseStudies() {
                     {/* Button */}
                     <div>
                       <motion.a
-                        href="#"
-                        className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+                        href={study.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ x: 5 }}
+                        className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
                       >
-                        View Case Study
+                        View Work
                         <span aria-hidden="true" className="ml-2">
                           →
                         </span>
@@ -131,11 +136,11 @@ export default function CaseStudies() {
 
                   {/* Image */}
                   <div className="md:w-1/2 flex-shrink-0">
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-background/50">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-background/10">
                       <img
                         src={study.image}
                         alt={study.title}
-                        className="w-fit h-fit object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   </div>
@@ -143,7 +148,7 @@ export default function CaseStudies() {
               </div>
 
               {/* Background gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </div>

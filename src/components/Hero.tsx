@@ -65,7 +65,16 @@ export default function Hero() {
   const handleTalkClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsLiking(true);
-    setTimeout(() => setIsLiking(false), 2000);
+
+    // Delay both the like reset and scroll
+    setTimeout(() => {
+      setIsLiking(false);
+      // Smooth scroll to footer after the like animation
+      const footer = document.querySelector("footer");
+      if (footer) {
+        footer.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500);
   };
 
   const getProfileImage = () => {
@@ -176,10 +185,6 @@ export default function Hero() {
           >
             Let's talk
             <span aria-hidden="true">👋</span>
-          </a>
-          <a href="#template" className="btn btn-outline">
-            Get Template
-            <span aria-hidden="true">→</span>
           </a>
         </motion.div>
       </div>
